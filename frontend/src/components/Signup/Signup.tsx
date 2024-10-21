@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
-import { AiOutlineMail, AiOutlineLock, AiOutlineEyeInvisible, AiOutlineUser, AiOutlinePhone, AiOutlineCalendar, AiOutlineClose } from 'react-icons/ai';
+import  { useState } from 'react';
+import { AiOutlineMail, AiOutlineLock, AiOutlineEyeInvisible, AiOutlineUser, AiOutlinePhone, AiOutlineCalendar } from 'react-icons/ai';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { registerUser } from '../../ApiService/ApiService';
+import ArticlePreferences from './ArticlePreferences';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { setUser } from '../../Redux/slices/UserSlice';
+import { useDispatch } from 'react-redux';
 
 export default function UserRegistrationForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
+  const navigate = useNavigate();
+  const dispatch=useDispatch()
   const initialValues = {
     firstName: '',
     lastName: '',
@@ -46,6 +53,7 @@ export default function UserRegistrationForm() {
       )
       .required('Password is required'),
     confirmPassword: Yup.string()
+    //@ts-ignore
       .oneOf([Yup.ref('password'), null], 'Passwords must match')
       .required('Confirm password is required'),
     articlePreferences: Yup.array()
@@ -53,22 +61,27 @@ export default function UserRegistrationForm() {
       .required('Article preferences are required'),
   });
 
-  const handleSubmit = async (values, { setSubmitting }) => {
-    // Handle form submission here
-    console.log(values);
-    setSubmitting(false);
+  const handleSubmit = async (values:any) => {
+    
+    const response: any= await registerUser(values);
+    console.log(response);
+    if (response.status === 200) {
+      
+      dispatch(setUser(response.data.user))
+      toast.success('Registration successful!');
+      navigate('/home');
+    }
   };
 
   const togglePasswordVisibility = () => setIsPasswordVisible(!isPasswordVisible);
 
-  const preferences = ['Technology', 'Science', 'Business', 'Entertainment', 'Sports', 'Politics', 'Health', 'Travel'];
-
+ 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl w-full">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 p-8">
-            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">User Registration</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Persual User Registration</h2>
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
@@ -184,54 +197,7 @@ export default function UserRegistrationForm() {
                     <ErrorMessage name="confirmPassword" component="p" className="mt-1 text-sm text-red-600" />
                   </div>
                   
-                  <div>
-                    <label htmlFor="articlePreferences" className="block text-sm font-medium text-gray-700">Article Preferences</label>
-                    <div className="mt-1 relative rounded-md shadow-sm">
-                      <Field
-                        as="select"
-                        name="articlePreferences"
-                        id="articlePreferences"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        onChange={(e) => {
-                          const value = e.target.value;
-                          if (value && !values.articlePreferences.includes(value)) {
-                            setFieldValue('articlePreferences', [...values.articlePreferences, value]);
-                          }
-                          e.target.value = ''; // Reset dropdown after selection
-                        }}
-                      >
-                        <option value="">Select preferences</option>
-                        {preferences.map((pref) => (
-                          <option key={pref} value={pref}>
-                            {pref}
-                          </option>
-                        ))}
-                      </Field>
-                    </div>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {values.articlePreferences.map((pref) => (
-                        <span
-                          key={pref}
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
-                        >
-                          {pref}
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setFieldValue(
-                                'articlePreferences',
-                                values.articlePreferences.filter((p) => p !== pref)
-                              );
-                            }}
-                            className="ml-1 inline-flex items-center justify-center w-4 h-4 text-blue-400 hover:bg-blue-200 hover:text-blue-500 rounded-full focus:outline-none"
-                          >
-                            <AiOutlineClose className="w-3 h-3" />
-                          </button>
-                        </span>
-                      ))}
-                    </div>
-                    <ErrorMessage name="articlePreferences" component="p" className="mt-1 text-sm text-red-600" />
-                  </div>
+                  <ArticlePreferences values={values} setFieldValue={setFieldValue} />
 
                   <div>
                     <button

@@ -1,48 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AiOutlineMail, AiOutlineLock, AiOutlineEyeInvisible } from 'react-icons/ai';
 import Loading from '../../Loading/Loading.tsx';
 import './Login.css';
-// import { FcGoogle } from 'react-icons/fc';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { HandleLogin } from '../../ApiService/ApiService.ts';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../Redux/slices/UserSlice.ts';
 
 const Login: React.FC = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch=useDispatch()
   const navigate = useNavigate();
-//   const location = useLocation();
-
-//   useEffect(() => {
-//     if (isAuthenticated) {
-//       navigate('/home');
-//     }
-//   }, [isAuthenticated, navigate]);
-
-//   useEffect(() => {
-//     const queryParams = new URLSearchParams(location.search);
-//     const status = queryParams.get('status');
-//     const userString: string | null = queryParams.get('user');
-
-//     if (status === 'true' && userString) {
-//       try {
-//         const user = JSON.parse(userString);
-//         // dispatch(setUser(user));
-//         localStorage.setItem('isAuthenticated', 'true');
-//         navigate('/home');
-//       } catch (error) {
-//         console.error('Error parsing user:', error);
-//         toast.error('Failed to parse user data.');
-//       }
-//     } else if (status === 'false') {
-//       toast.error('User already exists. Please login.');
-//     }
-//   }, [location, navigate, dispatch]);
-
-  // const handleGoogleSignIn = async () => {
-  //   window.location.href = 'https://hasth.mooo.com/api/auth/google';
-  // };
 
   const togglePasswordVisibility = () => setIsPasswordVisible(!isPasswordVisible);
 
@@ -62,8 +34,14 @@ const Login: React.FC = () => {
   const handleLogin = async (values: { email: string; password: string }, { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }) => {
     setIsLoading(true);
     try {
-      
-        navigate('/home');
+      const response=await HandleLogin(values);
+      if(response?.status===200){
+      dispatch(setUser(response.data.user))
+      toast.success('Logined Successfully')
+        navigate('/home');}
+        else{
+          toast.error('Please Register your Account')
+        }
       
     } catch (error) {
       console.error('Error during login:', error);
@@ -77,7 +55,7 @@ const Login: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center background-image">
       <div className="relative border-transparent rounded-lg shadow-lg p-8 w-full max-w-md bg-white">
-        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-700">Login</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-700">Persual Login</h2>
         <img src="/login.avif" alt="Login" className="w-full h-auto mb-4" />
         <Formik
           initialValues={{ email: '', password: '' }}

@@ -1,6 +1,4 @@
-import Login from "../components/Login/LoginForm"
-
-
+import Login from "../components/Login/LoginForm";
 
 export default ()=>{
     return(

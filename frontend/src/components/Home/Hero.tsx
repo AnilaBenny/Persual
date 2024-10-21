@@ -1,10 +1,11 @@
-import React, { Suspense } from "react";
+import  { Suspense } from "react";
 import styled from "styled-components";
 
 // import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import Navbar from "../Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Section = styled.div`
   height: 100vh;
@@ -123,6 +124,7 @@ const Img = styled.img`
 `;
 
 const Hero = () => {
+  const navigate=useNavigate();
   return (
     <Section>
       <Navbar/>
@@ -137,7 +139,7 @@ const Hero = () => {
           We are dedicated to providing insightful articles tailored to your preferences,
           helping you read, grow, and cherish knowledge.
           </Desc>
-          <Button>create Article</Button>
+          <Button onClick={()=>navigate('/write')}>create Article</Button>
         </Left>
         <Right>
           <Canvas>
