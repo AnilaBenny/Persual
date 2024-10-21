@@ -13088,3 +13088,11 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1207:32)
     at Function.Module._load (node:internal/modules/cjs/loader:1023:12)
     at Module.require (node:internal/modules/cjs/loader:1235:19)
+2024-10-21 19:56:43 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:40:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
