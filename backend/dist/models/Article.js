@@ -68,6 +68,14 @@ const articleSchema = new mongoose_1.Schema({
         ref: 'User',
         required: true,
     },
+    Blocked: {
+        type: [{
+                type: mongoose_1.default.Schema.Types.ObjectId,
+                ref: 'User',
+                required: true,
+            }],
+        default: []
+    },
     createdAt: {
         type: Date,
         default: Date.now,

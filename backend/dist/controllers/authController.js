@@ -162,7 +162,7 @@ const WriteArticle = async (req, res) => {
         const { name, description, tags, category, author } = req.body;
         const image = (_a = req.file) === null || _a === void 0 ? void 0 : _a.filename;
         if (!name || !description || !category || !author) {
-            return res.status(400).json({ message: "All required fields must be provided" });
+            res.status(400).json({ message: "All required fields must be provided" });
         }
         const newArticle = new Article_1.Article({
             name,
@@ -173,21 +173,37 @@ const WriteArticle = async (req, res) => {
             author,
         });
         const savedArticle = await newArticle.save();
-        return res.status(200).json({
+        res.status(200).json({
             message: 'Article successfully created',
             article: savedArticle,
         });
     }
     catch (error) {
         console.error("Error creating article:", error);
-        return res.status(500).json({
+        res.status(500).json({
             message: 'Internal Server Error',
             error: error.message,
         });
     }
 };
 exports.WriteArticle = WriteArticle;
-const getAllArticlesByUser = () => { };
+const getAllArticlesByUser = async (req, res) => {
+    try {
+        const { userId } = req.body;
+        if (!userId) {
+            res.status(400).json({ message: 'User ID is required' });
+        }
+        const articles = await Article_1.Article.find({ author: userId });
+        if (articles.length === 0) {
+            res.status(404).json({ message: 'No articles found for this user' });
+        }
+        res.status(200).json({ message: 'Articles retrieved successfully', articles });
+    }
+    catch (error) {
+        console.error('Error retrieving articles:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
 exports.getAllArticlesByUser = getAllArticlesByUser;
 const getAllArticlesByUsersPreference = async (req, res) => {
     try {
@@ -210,7 +226,7 @@ const likeArticle = async (req, res) => {
         const { userId, articleId } = req.body;
         const article = await Article_1.Article.findById(articleId);
         if (!article) {
-            return res.status(404).json({ message: 'Article not found' });
+            res.status(404).json({ message: 'Article not found' });
         }
         const isAlreadyLiked = article.liked.includes(userId);
         const isDisliked = article.disliked.includes(userId);
@@ -224,11 +240,11 @@ const likeArticle = async (req, res) => {
             }
         }
         await article.save();
-        return res.status(200).json({ message: 'Article liked status updated', liked: article.liked.length });
+        res.status(200).json({ message: 'Article liked status updated', liked: article.liked.length });
     }
     catch (error) {
         console.error('Error liking article:', error);
-        return res.status(500).json({ message: 'Internal server error' });
+        res.status(500).json({ message: 'Internal server error' });
     }
 };
 exports.likeArticle = likeArticle;
@@ -237,7 +253,7 @@ const dislikeArticle = async (req, res) => {
         const { userId, articleId } = req.body;
         const article = await Article_1.Article.findById(articleId);
         if (!article) {
-            return res.status(404).json({ message: 'Article not found' });
+            res.status(404).json({ message: 'Article not found' });
         }
         const isAlreadyDisliked = article.disliked.includes(userId);
         const isLiked = article.liked.includes(userId);
@@ -251,17 +267,93 @@ const dislikeArticle = async (req, res) => {
             }
         }
         await article.save();
-        return res.status(200).json({ message: 'Article dislike status updated', disliked: article.disliked.length });
+        res.status(200).json({ message: 'Article dislike status updated', disliked: article.disliked.length });
     }
     catch (error) {
         console.error('Error disliking article:', error);
-        return res.status(500).json({ message: 'Internal server error' });
+        res.status(500).json({ message: 'Internal server error' });
     }
 };
 exports.dislikeArticle = dislikeArticle;
-const blockArticle = () => { };
+const blockArticle = async (req, res) => {
+    try {
+        const { userId, articleId } = req.body;
+        const user = await User_1.User.findById(userId);
+        const article = await Article_1.Article.findById(articleId);
+        if (!user || !article) {
+            res.status(404).json({ message: 'User or Article not found' });
+            return;
+        }
+        const isAlreadyBlocked = user.blockedArticles.includes(articleId);
+        if (isAlreadyBlocked) {
+            user.blockedArticles = user.blockedArticles.filter((id) => id.toString() !== articleId.toString());
+            article.Blocked = article.Blocked.filter((id) => id.toString() !== userId.toString());
+        }
+        else {
+            user.blockedArticles.push(articleId);
+            article.Blocked.push(userId);
+        }
+        await user.save();
+        await article.save();
+        res.status(200).json({
+            message: isAlreadyBlocked ? 'Article unblocked' : 'Article blocked',
+            isBlocked: !isAlreadyBlocked,
+            user: user
+        });
+    }
+    catch (error) {
+        console.error('Error blocking/unblocking article:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
 exports.blockArticle = blockArticle;
-const EditArticle = () => { };
+const EditArticle = async (req, res) => {
+    try {
+        const { name, description, tags, category, author, articleId } = req.body;
+        const image = req.file ? req.file.filename : null;
+        const existingArticle = await Article_1.Article.findById(articleId);
+        if (!existingArticle) {
+            return res.status(404).json({ message: 'Article not found' });
+        }
+        existingArticle.name = name || existingArticle.name;
+        existingArticle.description = description || existingArticle.description;
+        existingArticle.tags = tags || existingArticle.tags;
+        existingArticle.category = category || existingArticle.category;
+        if (author) {
+            const authorExists = await User_1.User.findById(author);
+            if (!authorExists) {
+                return res.status(404).json({ message: 'Author not found' });
+            }
+            existingArticle.author = author;
+        }
+        if (image) {
+            existingArticle.image = image;
+        }
+        const updatedArticle = await existingArticle.save();
+        res.status(200).json({
+            message: 'Article successfully updated',
+            article: updatedArticle,
+        });
+    }
+    catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Internal server error', error: err.message });
+    }
+};
 exports.EditArticle = EditArticle;
-const deleteArticle = () => { };
+const deleteArticle = async (req, res) => {
+    const { articleId } = req.params;
+    try {
+        const deletedArticle = await Article_1.Article.findByIdAndDelete(articleId);
+        if (!deletedArticle) {
+            res.status(404).json({ message: 'Article not found' });
+        }
+        await User_1.User.updateMany({ blockedArticles: articleId }, { $pull: { blockedArticles: articleId } });
+        res.status(200).json({ message: 'Article deleted and users updated successfully' });
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
 exports.deleteArticle = deleteArticle;
