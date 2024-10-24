@@ -10,7 +10,7 @@ import path from 'path';
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3001', 'https://persual-anilas-projects-efeda6c3.vercel.app/'], 
+  origin: ['http://localhost:3001', 'https://persual-anilas-projects-efeda6c3.vercel.app/','https://persual.vercel.app/'], 
   credentials: true, 
 }));
 
