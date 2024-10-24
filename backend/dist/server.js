@@ -12,12 +12,12 @@ const database_1 = require("./config/database");
 const path_1 = __importDefault(require("path"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)({
-    origin: ['http://localhost:3001', 'https://persual-anilas-projects-efeda6c3.vercel.app/', 'https://persual.vercel.app/'],
-    credentials: true,
-}));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
+app.use((0, cors_1.default)({
+    origin: ['http://localhost:3001', 'https://persual.vercel.app'],
+    credentials: true,
+}));
 app.use((req, res, next) => {
     logger_1.default.info(`${req.method} ${req.url}`);
     next();
@@ -28,13 +28,14 @@ app.use((err, req, res, next) => {
     logger_1.default.error(`${err.status || 500} - ${err.message}`);
     res.status(err.status || 500).send('Something went wrong!');
 });
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 console.log('App is starting...');
 (0, database_1.connectToDatabase)().then(() => {
     console.log('Connected to the database');
-    app.listen(PORT, () => {
+    app.listen(8080, () => {
         console.log(`Server is running on port ${PORT}`);
     });
+    console.log('hee');
 }).catch((error) => {
     console.error('Failed to connect to the database:', error);
     process.exit(1);
