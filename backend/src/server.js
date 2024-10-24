@@ -13,7 +13,7 @@ const database_1 = require("./config/database");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: 'http://localhost:3001',
+    origin: ['http://localhost:3001','https://persual.vercel.app'],
     credentials: true,
 }));
 app.use(express_1.default.json());
