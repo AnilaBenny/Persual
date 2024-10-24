@@ -9,14 +9,14 @@ import path from 'path';
  
 const app = express();
 
-app.use(cors({
-  origin: ['http://localhost:3001', 'https://persual-anilas-projects-efeda6c3.vercel.app/','https://persual.vercel.app/'], 
-  credentials: true, 
-}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-
+app.use(cors({
+  origin: ['http://localhost:3001','https://persual.vercel.app/'], 
+  credentials: true, 
+}));
 
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.url}`);
@@ -32,16 +32,20 @@ app.use((err: any, req: any, res: any, next: any) => {
   res.status(err.status || 500).send('Something went wrong!');
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT=8080;
 
 console.log('App is starting...');
 
 connectToDatabase().then(() => {
   console.log('Connected to the database');
-  app.listen(PORT, () => {
+  app.listen(8080, () => {
     console.log(`Server is running on port ${PORT}`);
   });
+  console.log('hee');
+  
 }).catch((error) => {
   console.error('Failed to connect to the database:', error);
   process.exit(1); 
 });
+
+

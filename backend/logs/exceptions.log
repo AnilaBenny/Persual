@@ -13144,3 +13144,275 @@ Error: listen EADDRINUSE: address already in use :::8080
     at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
     at D:\Article feed web app\backend\src\server.ts:41:7
     at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:23:06 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:24:11 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:25:08 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:25:25 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:25:42 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:27:29 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:28:14 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:34:15 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:35:29 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:37:26 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:47:00 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:52:56 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:57:22 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:58:10 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 14:59:10 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:49:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 14:59:20 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:49:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 14:59:37 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:49:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 14:59:56 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:36:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 15:00:32 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:36:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 15:00:51 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:47:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 15:01:01 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:49:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 15:01:14 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 15:02:07 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:42:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 15:02:21 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 15:03:31 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:47:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 15:04:51 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:37:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 15:05:09 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Article feed web app\backend\src\server.ts:37:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module.m._compile (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Article feed web app\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+2024-10-24 15:05:32 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-10-24 15:07:25 error: uncaughtException: listen EADDRINUSE: address already in use :::8080
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (D:\Article feed web app\backend\node_modules\express\lib\application.js:635:24)
+    at D:\Article feed web app\backend\src\server.ts:41:7
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
