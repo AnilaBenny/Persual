@@ -47,7 +47,7 @@ const RecommendedArticles = () => {
                     className="h-48 bg-cover bg-center"
                     style={{
                       backgroundImage: article.image
-                        ? `url(http://localhost:8080/uploads/${article.image})`
+                        ? `url(https://persual.mooo.com/uploads/${article.image})`
                         : `url('/default-image.jpg')`
                     }}
                   />

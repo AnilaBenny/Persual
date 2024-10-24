@@ -112,7 +112,7 @@ const EditArticleModal = ({ editModalOpen, setEditModalOpen, editingItem, handle
                   <div className="mb-4">
                     <label className="block text-sm font-medium">Current Image</label>
                     <img
-                    src={`http://localhost:8080/uploads/${editingItem.image}`}
+                    src={`https://persual.mooo.com/uploads/${editingItem.image}`}
                     alt="Current"
                     className="mt-1 max-w-xs border rounded-md"
                     />

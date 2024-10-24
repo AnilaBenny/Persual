@@ -35,7 +35,7 @@ const Login: React.FC = () => {
     setIsLoading(true);
     try {
       const response=await HandleLogin(values);
-      if(response?.status===200){
+      if(response){
       dispatch(setUser(response.data.user))
       toast.success('Logined Successfully')
         navigate('/home');}

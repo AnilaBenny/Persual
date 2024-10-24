@@ -65,7 +65,7 @@ export default function UserRegistrationForm() {
     
     const response: any= await registerUser(values);
     console.log(response);
-    if (response.status === 200) {
+    if (response) {
       
       dispatch(setUser(response.data.user))
       toast.success('Registration successful!');
