@@ -10,6 +10,7 @@ const logger_1 = __importDefault(require("./middleware/logger"));
 const authRoute_1 = __importDefault(require("./routes/authRoute"));
 const articleRoutes_1 = __importDefault(require("./routes/articleRoutes"));
 const database_1 = require("./config/database");
+const path = require('path');
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use('/', authRoute_1.default, articleRoutes_1.default);
+app.use('/uploads', express_1.default.static(path_1.default.join(__dirname, 'uploads')));
 app.use((err, req, res, next) => {
     logger_1.default.error(`${err.status || 500} - ${err.message}`);
     res.status(err.status || 500).send('Something went wrong!');
