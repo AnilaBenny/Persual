@@ -146,7 +146,7 @@ export default () => {
       <div className="max-w-4xl mx-auto mt-16 bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="relative">
           <img 
-            src={article?.image ? `http://localhost:8080/uploads/${article.image}` : '/default-image.jpg'} 
+            src={article?.image ? `https://persual.mooo.com/uploads/${article.image}` : '/default-image.jpg'} 
             alt={article?.name} 
             className="w-full h-64 object-cover"
           />
